@@ -33,7 +33,7 @@
 							{
 								"name": "time_col",
 								"value": {
-									"value": "utcNow()",
+									"value": "@utcNow()",
 									"type": "Expression"
 								}
 							},
