@@ -55,13 +55,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "blob_binary_ds",
+						"referenceName": "blob_binary_input_dataset",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "blob_binary_ds",
+						"referenceName": "blob_binary_output_dataset",
 						"type": "DatasetReference"
 					}
 				]
