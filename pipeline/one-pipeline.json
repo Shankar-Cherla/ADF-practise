@@ -81,66 +81,11 @@
 							},
 							{
 								"source": {
-									"name": "file_path_col",
+									"name": "gender",
 									"type": "String"
 								},
 								"sink": {
-									"name": "file_path_col",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "file_nm_col",
-									"type": "String"
-								},
-								"sink": {
-									"name": "file_nm_col",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "pichi_col",
-									"type": "String"
-								},
-								"sink": {
-									"name": "pichi_col",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "time_col",
-									"type": "String"
-								},
-								"sink": {
-									"name": "time_col",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "pipeline_nm",
-									"type": "String"
-								},
-								"sink": {
-									"name": "pipeline_nm",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "dup_emp_nm",
-									"type": "String"
-								},
-								"sink": {
-									"name": "dup_emp_nm",
+									"name": "gender",
 									"type": "String",
 									"physicalType": "String"
 								}
