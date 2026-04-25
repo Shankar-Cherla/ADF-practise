@@ -10,8 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "emp_data.csv",
-				"folderPath": "orders/gender=Male",
 				"container": "input-container"
 			},
 			"columnDelimiter": ",",

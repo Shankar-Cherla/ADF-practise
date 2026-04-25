@@ -19,9 +19,10 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": false,
+							"recursive": true,
 							"enablePartitionDiscovery": true,
-							"partitionRootPath": "input-container/orders"
+							"partitionRootPath": "input-container/orders",
+							"prefix": "orders"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
@@ -31,7 +32,7 @@
 						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings",
-							"copyBehavior": "MergeFiles"
+							"copyBehavior": "PreserveHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
