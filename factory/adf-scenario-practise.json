@@ -1,0 +1,15 @@
+{
+	"name": "adf-scenario-practise",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5012fed2-5c59-45d8-8314-7d215937e5a7",
+		"tenantId": "fd0a8632-9291-44cf-b9a4-fece0f6c9fd5"
+	}
+}
