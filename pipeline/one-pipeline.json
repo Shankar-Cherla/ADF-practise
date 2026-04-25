@@ -43,13 +43,16 @@
 									"value": "@pipeline().Pipeline",
 									"type": "Expression"
 								}
+							},
+							{
+								"name": "dup_emp_nm",
+								"value": "$$COLUMN:emp_name"
 							}
 						],
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": false,
-							"enablePartitionDiscovery": true,
-							"partitionRootPath": "input-container/orders",
+							"recursive": true,
+							"enablePartitionDiscovery": false,
 							"prefix": "orders"
 						},
 						"formatSettings": {
@@ -71,6 +74,110 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "UNIQ_ID_SRC_SYS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UNIQ_ID_SRC_SYS",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "balance",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "balance",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "emp_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "emp_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "file_path_col",
+									"type": "String"
+								},
+								"sink": {
+									"name": "file_path_col",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "file_nm_col",
+									"type": "String"
+								},
+								"sink": {
+									"name": "file_nm_col",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "pichi_col",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pichi_col",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "time_col",
+									"type": "String"
+								},
+								"sink": {
+									"name": "time_col",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "pipeline_nm",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pipeline_nm",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dup_emp_nm",
+									"type": "String"
+								},
+								"sink": {
+									"name": "dup_emp_nm",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
