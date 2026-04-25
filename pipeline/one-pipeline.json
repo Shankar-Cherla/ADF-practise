@@ -25,6 +25,24 @@
 							{
 								"name": "file_nm_col",
 								"value": "$$FILENAME"
+							},
+							{
+								"name": "pichi_col",
+								"value": "wakka wakka"
+							},
+							{
+								"name": "time_col",
+								"value": {
+									"value": "@convertFromUtc(utcNow(),'Central Standard Time')",
+									"type": "Expression"
+								}
+							},
+							{
+								"name": "pipeline_nm",
+								"value": {
+									"value": "@pipeline().Pipeline",
+									"type": "Expression"
+								}
 							}
 						],
 						"storeSettings": {
@@ -41,12 +59,19 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy",
+							"metadata": [
+								{
+									"name": "metadata_key_i_created",
+									"value": "metadata_value_i_created"
+								}
+							]
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": ".csv"
 						}
 					},
 					"enableStaging": false,
