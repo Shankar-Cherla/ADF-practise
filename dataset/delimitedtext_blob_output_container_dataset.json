@@ -1,5 +1,5 @@
 {
-	"name": "delimitedtext_blob_input_container_dataset",
+	"name": "delimitedtext_blob_output_container_dataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "blob_linked_service",
@@ -14,7 +14,7 @@
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
-			"quoteChar": ""
+			"quoteChar": "\""
 		},
 		"schema": []
 	}

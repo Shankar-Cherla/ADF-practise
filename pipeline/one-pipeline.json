@@ -33,7 +33,7 @@
 							{
 								"name": "time_col",
 								"value": {
-									"value": "@convertFromUtc(utcNow(),'Central Standard Time')",
+									"value": "utcNow()",
 									"type": "Expression"
 								}
 							},
@@ -60,13 +60,7 @@
 						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings",
-							"copyBehavior": "FlattenHierarchy",
-							"metadata": [
-								{
-									"name": "metadata_key_i_created",
-									"value": "metadata_value_i_created"
-								}
-							]
+							"copyBehavior": "PreserveHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -86,13 +80,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "delimitedtext_blob_dataset",
+						"referenceName": "delimitedtext_blob_input_container_dataset",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "delimitedtext_blob_dataset",
+						"referenceName": "delimitedtext_blob_output_container_dataset",
 						"type": "DatasetReference"
 					}
 				]
