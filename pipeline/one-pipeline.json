@@ -17,43 +17,11 @@
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
-						"additionalColumns": [
-							{
-								"name": "file_path_col",
-								"value": "$$FILEPATH"
-							},
-							{
-								"name": "file_nm_col",
-								"value": "$$FILENAME"
-							},
-							{
-								"name": "pichi_col",
-								"value": "wakka wakka"
-							},
-							{
-								"name": "time_col",
-								"value": {
-									"value": "@utcNow()",
-									"type": "Expression"
-								}
-							},
-							{
-								"name": "pipeline_nm",
-								"value": {
-									"value": "@pipeline().Pipeline",
-									"type": "Expression"
-								}
-							},
-							{
-								"name": "dup_emp_nm",
-								"value": "$$COLUMN:emp_name"
-							}
-						],
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false,
-							"prefix": "orders"
+							"recursive": false,
+							"enablePartitionDiscovery": true,
+							"partitionRootPath": "input-container/orders"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
