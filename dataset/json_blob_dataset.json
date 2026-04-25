@@ -1,0 +1,17 @@
+{
+	"name": "json_blob_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blob_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			}
+		},
+		"schema": {}
+	}
+}
