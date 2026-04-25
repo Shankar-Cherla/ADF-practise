@@ -50,7 +50,7 @@
 							"recursive": false,
 							"enablePartitionDiscovery": true,
 							"partitionRootPath": "input-container/orders",
-							"prefix": "input-container/orders"
+							"prefix": "orders"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
