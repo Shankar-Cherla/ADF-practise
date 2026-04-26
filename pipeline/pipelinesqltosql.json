@@ -50,6 +50,18 @@
 									"scale": 18,
 									"precision": 38
 								}
+							},
+							{
+								"source": {
+									"name": "emp_name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "emp_name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
 							}
 						],
 						"typeConversion": true,
