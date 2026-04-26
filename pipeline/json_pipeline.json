@@ -1,0 +1,118 @@
+{
+	"name": "json_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": false,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ""
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['age']"
+								},
+								"sink": {
+									"name": "age",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['emp_details']['emp_name']"
+								},
+								"sink": {
+									"name": "emp_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['emp_details']['emp_location']"
+								},
+								"sink": {
+									"name": "emp_location",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['old_emp_details'][0]['old_emp_nm']"
+								},
+								"sink": {
+									"name": "old_emp_nm",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['old_emp_details'][0]['oldemp_loc']"
+								},
+								"sink": {
+									"name": "old_emp_loc",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "input_json_dataset",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "delimitedtext_blob_output_container_dataset",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
