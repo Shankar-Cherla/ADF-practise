@@ -1,0 +1,16 @@
+{
+	"name": "sqldb_sink_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sql_db_sink_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "employees"
+		}
+	}
+}
