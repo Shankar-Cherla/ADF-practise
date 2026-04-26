@@ -20,7 +20,7 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": false,
-							"wildcardFileName": "emp_data.csv",
+							"wildcardFileName": "emp_data_another.csv",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -38,20 +38,6 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "balance",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "balance",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 18,
-									"precision": 38
-								}
-							},
-							{
-								"source": {
 									"name": "UNIQ_ID_SRC_SYS",
 									"type": "String",
 									"physicalType": "String"
@@ -60,18 +46,6 @@
 									"name": "UNIQ_ID_SRC_SYS",
 									"type": "Int32",
 									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "emp_name",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "emp_name",
-									"type": "String",
-									"physicalType": "nvarchar"
 								}
 							}
 						],
