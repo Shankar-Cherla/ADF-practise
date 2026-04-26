@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "string_another_json.txt",
 				"container": "output-container"
 			},
 			"columnDelimiter": ",",

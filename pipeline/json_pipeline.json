@@ -30,7 +30,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "MergeFiles"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -57,30 +58,21 @@
 								},
 								"sink": {
 									"name": "age",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "$['emp_details']['emp_name']"
-								},
-								"sink": {
-									"name": "emp_name",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['emp_details']['emp_location']"
+									"path": "$['emp_details']"
 								},
 								"sink": {
-									"name": "emp_location",
+									"name": "emp_dt",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['old_emp_details'][0]['old_emp_nm']"
+									"path": "['old_emp_nm']"
 								},
 								"sink": {
 									"name": "old_emp_nm",
@@ -89,14 +81,16 @@
 							},
 							{
 								"source": {
-									"path": "$['old_emp_details'][0]['oldemp_loc']"
+									"path": "['oldemp_loc']"
 								},
 								"sink": {
-									"name": "old_emp_loc",
+									"name": "oldemp_loc",
 									"type": "String"
 								}
 							}
-						]
+						],
+						"collectionReference": "$['old_emp_details']",
+						"mapComplexValuesToString": true
 					}
 				},
 				"inputs": [
