@@ -40,26 +40,26 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "UNIQ_ID_SRC_SYS",
-									"type": "String",
-									"physicalType": "String"
+									"name": "balance",
+									"type": "Decimal",
+									"physicalType": "Decimal"
 								},
 								"sink": {
-									"name": "UNIQ_ID_SRC_SYS",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"name": "balance",
+									"type": "Decimal",
+									"physicalType": "Decimal"
 								}
 							},
 							{
 								"source": {
-									"name": "balance",
-									"type": "String",
-									"physicalType": "String"
+									"name": "UNIQ_ID_SRC_SYS",
+									"type": "Int32",
+									"physicalType": "Int32"
 								},
 								"sink": {
-									"name": "balance",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"name": "UNIQ_ID_SRC_SYS",
+									"type": "Int32",
+									"physicalType": "Int32"
 								}
 							},
 							{
