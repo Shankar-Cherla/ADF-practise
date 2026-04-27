@@ -81,42 +81,10 @@
 									"mappings": [
 										{
 											"source": {
-												"path": "['id']"
-											},
-											"sink": {
-												"path": "ids"
-											}
-										},
-										{
-											"source": {
-												"path": "['email']"
-											},
-											"sink": {
-												"path": "emails"
-											}
-										},
-										{
-											"source": {
-												"path": "['first_name']"
-											},
-											"sink": {
-												"path": "frst_nms"
-											}
-										},
-										{
-											"source": {
-												"path": "['last_name']"
-											},
-											"sink": {
-												"path": "lst_nms"
-											}
-										},
-										{
-											"source": {
 												"path": "$['page']"
 											},
 											"sink": {
-												"path": "page_number"
+												"path": "this_page_number"
 											}
 										},
 										{
@@ -125,6 +93,22 @@
 											},
 											"sink": {
 												"path": "total_pages"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data']"
+											},
+											"sink": {
+												"path": "data_arr"
+											}
+										},
+										{
+											"source": {
+												"path": "$['data'][0]['id']"
+											},
+											"sink": {
+												"path": "data_arr_id_exploded"
 											}
 										}
 									],
