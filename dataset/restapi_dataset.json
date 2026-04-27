@@ -5,8 +5,19 @@
 			"referenceName": "restapi_linked_service",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"query_string": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@dataset().query_string",
+				"type": "Expression"
+			}
+		},
 		"schema": []
 	}
 }

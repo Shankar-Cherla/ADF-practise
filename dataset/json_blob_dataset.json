@@ -5,11 +5,20 @@
 			"referenceName": "blob_linked_service",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"json_file_nm": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().json_file_nm",
+					"type": "Expression"
+				},
 				"container": "output-container"
 			}
 		},
