@@ -1,0 +1,41 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blob_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "two_arr.json",
+				"container": "input-container"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "string"
+				},
+				"arr_numbers": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					}
+				},
+				"arr_letters": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}
