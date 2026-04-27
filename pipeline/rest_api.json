@@ -102,14 +102,6 @@
 											"sink": {
 												"path": "data_arr"
 											}
-										},
-										{
-											"source": {
-												"path": "$['data'][0]['id']"
-											},
-											"sink": {
-												"path": "data_arr_id_exploded"
-											}
 										}
 									],
 									"collectionReference": "$['data']"
