@@ -67,9 +67,18 @@
 									"name": "val_int",
 									"type": "Int32"
 								}
+							},
+							{
+								"source": {
+									"path": "$['arr_numbers']"
+								},
+								"sink": {
+									"name": "str_val"
+								}
 							}
 						],
-						"collectionReference": "$['arr_numbers']"
+						"collectionReference": "$['arr_numbers']",
+						"mapComplexValuesToString": true
 					}
 				},
 				"inputs": [
