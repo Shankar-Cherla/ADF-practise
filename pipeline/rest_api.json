@@ -84,7 +84,7 @@
 												"path": "['id']"
 											},
 											"sink": {
-												"path": "id"
+												"path": "ids"
 											}
 										},
 										{
@@ -92,7 +92,7 @@
 												"path": "['email']"
 											},
 											"sink": {
-												"path": "email"
+												"path": "emails"
 											}
 										},
 										{
@@ -100,7 +100,7 @@
 												"path": "['first_name']"
 											},
 											"sink": {
-												"path": "frst_nm"
+												"path": "frst_nms"
 											}
 										},
 										{
@@ -108,7 +108,23 @@
 												"path": "['last_name']"
 											},
 											"sink": {
-												"path": "last_nm"
+												"path": "lst_nms"
+											}
+										},
+										{
+											"source": {
+												"path": "$['page']"
+											},
+											"sink": {
+												"path": "page_number"
+											}
+										},
+										{
+											"source": {
+												"path": "$['total_pages']"
+											},
+											"sink": {
+												"path": "total_pages"
 											}
 										}
 									],
