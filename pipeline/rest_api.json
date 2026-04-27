@@ -42,7 +42,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Copy data1",
+							"name": "json copy",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -81,30 +81,14 @@
 									"mappings": [
 										{
 											"source": {
-												"path": "$['page']"
-											},
-											"sink": {
-												"path": "this_page_number"
-											}
-										},
-										{
-											"source": {
-												"path": "$['total_pages']"
-											},
-											"sink": {
-												"path": "total_pages"
-											}
-										},
-										{
-											"source": {
 												"path": "$['data']"
 											},
 											"sink": {
-												"path": "data_arr"
+												"path": "arr"
 											}
 										}
 									],
-									"collectionReference": "$['data']"
+									"collectionReference": ""
 								}
 							},
 							"inputs": [
@@ -126,6 +110,88 @@
 									"parameters": {
 										"json_file_nm": {
 											"value": "rest_api_file_@{item()}.json",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						},
+						{
+							"name": "csv copy",
+							"type": "Copy",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "RestSource",
+									"httpRequestTimeout": "00:01:40",
+									"requestInterval": "00.00:00:00.010",
+									"requestMethod": "GET",
+									"additionalHeaders": {
+										"x-api-key": "free_user_3CufPN2vipq4G5AnmDn65RREirW"
+									},
+									"paginationRules": {
+										"supportRFC5988": "true"
+									}
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings",
+										"copyBehavior": "PreserveHierarchy"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"path": "$['data']"
+											},
+											"sink": {
+												"name": "context",
+												"type": "String"
+											}
+										}
+									],
+									"collectionReference": "",
+									"mapComplexValuesToString": true
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "restapi_dataset",
+									"type": "DatasetReference",
+									"parameters": {
+										"query_string": {
+											"value": "?page=@{item()}",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "delimitedtext_blob_output_container_dataset",
+									"type": "DatasetReference",
+									"parameters": {
+										"csv_file_nm": {
+											"value": "rest_api_file_@{item()}.csv",
 											"type": "Expression"
 										}
 									}
