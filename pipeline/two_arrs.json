@@ -64,16 +64,17 @@
 									"path": "['value']"
 								},
 								"sink": {
-									"name": "val_int",
+									"name": "value",
 									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"path": "$['arr_numbers']"
+									"path": "['vv']"
 								},
 								"sink": {
-									"name": "str_val"
+									"name": "vv",
+									"type": "String"
 								}
 							}
 						],
