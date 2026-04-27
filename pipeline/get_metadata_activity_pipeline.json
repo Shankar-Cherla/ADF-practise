@@ -20,12 +20,11 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"contentMD5",
 						"exists",
 						"itemName",
 						"itemType",
 						"lastModified",
-						"size"
+						"childItems"
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
