@@ -70,7 +70,7 @@
 							},
 							{
 								"source": {
-									"path": "['vv']"
+									"path": "$['arr_letters']['vv']"
 								},
 								"sink": {
 									"name": "vv",
