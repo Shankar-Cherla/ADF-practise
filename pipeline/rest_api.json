@@ -63,26 +63,41 @@
 							{
 								"source": {
 									"path": "['id']"
+								},
+								"sink": {
+									"path": "id"
 								}
 							},
 							{
 								"source": {
 									"path": "['email']"
+								},
+								"sink": {
+									"path": "email"
 								}
 							},
 							{
 								"source": {
 									"path": "['first_name']"
+								},
+								"sink": {
+									"path": "first_nm"
 								}
 							},
 							{
 								"source": {
 									"path": "['last_name']"
+								},
+								"sink": {
+									"path": "lst_nm"
 								}
 							},
 							{
 								"source": {
 									"path": "['avatar']"
+								},
+								"sink": {
+									"path": "avatar"
 								}
 							}
 						],
