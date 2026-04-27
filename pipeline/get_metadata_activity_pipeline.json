@@ -20,10 +20,6 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"exists",
-						"itemName",
-						"itemType",
-						"lastModified",
 						"childItems"
 					],
 					"storeSettings": {
@@ -32,6 +28,29 @@
 					},
 					"formatSettings": {
 						"type": "BinaryReadSettings"
+					}
+				}
+			},
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get Metadata1').output.childItems",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@equals(item().type,'Folder')",
+						"type": "Expression"
 					}
 				}
 			}
