@@ -43,7 +43,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['arr_numbers']"
+									"path": "['arr_numbers']"
 								},
 								"sink": {
 									"name": "arr",
