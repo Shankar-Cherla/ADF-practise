@@ -88,7 +88,7 @@
 											}
 										}
 									],
-									"collectionReference": "$['data']"
+									"collectionReference": ""
 								}
 							},
 							"inputs": [
