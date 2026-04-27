@@ -37,7 +37,40 @@
 							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['value']"
+								},
+								"sink": {
+									"name": "val_int",
+									"type": "Int32"
+								}
+							}
+						],
+						"collectionReference": "$['arr_numbers']"
+					}
 				},
 				"inputs": [
 					{
